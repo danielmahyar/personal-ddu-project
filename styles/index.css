@@ -1,0 +1,257 @@
+/*
+	Author: Daniel Cargar Mahyar
+	@Copyright Vocast
+
+	Notes:
+		- MOBILE FIRST - DESKTOP LATER model
+			- Media Quieries are used to develop Desktop view
+*/
+
+/*Importing fonts from Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Import all css classes: */
+@import url("classes/input.css");
+
+
+/*Normalize CSS properties applies to all viewports*/
+*, 
+*::after,
+ *::before{
+	--black-color: #252525;
+
+
+
+
+
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ### MOBILE CSS START ### */
+
+.header-container{
+	background-color: var(--black-color);
+	margin-bottom: 4rem;
+}
+
+.header{
+	display: flex;
+	z-index: 1;
+	justify-content: space-between;
+	align-items: center;
+	height: 10vh;
+	margin-bottom: 5rem;
+	padding: 0 1.5rem;
+	
+}
+
+.header-title{
+	color: white;
+	font-size: 1.25rem;
+	transform: scale(1);
+	text-transform: uppercase;
+	transition: all 1s ease;
+	text-decoration: none;
+}
+
+.header-title:hover{
+	transform: scale(1.05);
+	transform-origin: left;
+	cursor: pointer;
+}
+
+.header .hamburger-icon{
+	display: block;
+	transform: scale(1) rotate(0deg);
+	transition: all 1s ease-in-out;
+}
+
+.header .hamburger-icon:hover{
+	cursor: pointer;
+	transform: scale(1.1) rotate(180deg);
+	
+}
+
+.header-btn-container{
+	display: none;
+}
+
+.nav{
+	display: none;
+}
+
+.hero-container{
+	display: flex;
+	height: 100%;
+}
+
+.hero{
+	background-color: var(--black-color);
+	padding: 0 1.5rem;
+	height: 40vh;
+	width: 100%;
+}
+
+.hero-left-section{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.hero-title{
+	z-index: 3;
+	color: white;
+	font-size: 3rem;
+	text-transform: uppercase;
+	margin-bottom: .5rem;
+}
+
+
+.hero-left-section .btn-container{
+	z-index: 55;
+	max-width: 70%;
+}
+
+
+.hero-img{
+	display: block;
+	position: absolute;
+	background-image: url("../img/phone.png");
+	background-size: 400px;
+	background-position: -150px 0;
+	background-repeat: no-repeat;
+	transform: scaleX(-1);
+	width: 100%;
+	right: 0;
+	top: 100px;
+	height: 62%;
+	z-index: 1;
+	transition: all 1s ease;
+	overflow: clip;
+}
+
+.main-container{
+	padding: 0 1.5rem;
+}
+
+.services-section{
+
+}
+
+
+@media (min-width:420px)  {
+
+	.hero-img{
+		background-position: -50px 0;
+	}
+	
+
+}
+
+/* ### MOBILE CSS END ### */
+
+
+/*Desktop CSS*/
+@media (min-width:670px)  {
+	.header{
+		position: relative;
+
+		width: 90%;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+		align-items: center;
+	}
+
+	.header-title{
+		justify-self: start;
+	}
+
+	.header-btn-container{
+		display: block;
+		justify-self: end;
+		width: 60%;
+	}
+
+	.hamburger-icon-container{
+		display: none;
+	}
+
+	.hero-container{
+		width: 90%;
+		height: 55vh;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.hero{
+		display: flex;
+		width: 100%;
+		align-items: center;
+	}
+	.hero-left-section{
+	}
+
+	.hero-img{
+		background-image: url("../img/desktop.jpg");
+		height: 450px;
+		background-position: 0 50%;
+		background-size: cover;
+		width: 80%;
+		right: 0;
+		transform: scaleX(1);
+		border-top-left-radius: 99999px;
+		border-bottom-left-radius: 99999px;
+	}
+
+	.btn-container{
+		max-width: 80%;
+	}
+
+	br{
+		display: none;
+	}
+	
+}
+
+@media (min-width:1000px)  {
+	.header{
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.header .nav {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+	}
+
+	.header .nav a{
+		text-decoration: none;
+		color: white;
+		font-size: 1rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	/* .hero-img{
+		background-position: 0 -150px;
+	} */
+
+}
+
+
+/* @media (min-width:1000px)  {
+
+	.hero-img{
+		background-position: 0 -150px;
+	}
+
+} */
