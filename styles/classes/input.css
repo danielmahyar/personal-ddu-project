@@ -14,7 +14,7 @@
 
 .btn:hover{
 	transform: scale(1.05);
-	background-color: aqua;
+	background-color: orangered;
 	cursor: pointer;
 }
 
@@ -29,6 +29,6 @@
 }
 
 .btn.btn-primary:hover {
-	background-color: aqua;
+	background-color: orangered;
 
 }
