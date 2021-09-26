@@ -33,6 +33,8 @@ header{
 	height: 100%;
 	width: 100%;
 	color: white;
+	overflow: hidden;
+	position: relative;
 }
 
 .nav{
@@ -45,12 +47,28 @@ header{
 	margin-bottom: 2rem;
 }
 
+.nav-links{
+	display: none;
+}
+
+.nav-btn{
+	display: none;
+}
+
 .logo{
 	font-size: 1.25rem;
 }
 
+.hamburger-menu{
+	display: block;
+}
+
 .hamburger-menu:hover{
 	cursor: pointer;
+}
+
+.big{
+	color: red;
 }
 
 .hero{
@@ -62,6 +80,8 @@ header{
 	align-items: flex-start;
 	padding: 1.25rem;
 	overflow-x: hidden;
+	overflow-y: hidden;
+
 }
 
 .hero-left-section{
@@ -102,7 +122,9 @@ header{
 	text-align: center
 }
 
-
+main {
+	padding: 1.5rem;
+}
 
 
 
@@ -123,16 +145,80 @@ header{
 
 /*Desktop CSS*/
 @media (min-width:670px)  {
+	.nav{
+		width: 80%;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5em;
+	}
+
+	.nav-links{
+		display: flex;
+		justify-content: space-evenly;
+		grid-column: span 2;
+	}
+
+	.nav-links a {
+		text-decoration: none;
+		color: white;
+		font-weight: bold;
+	}
+
+	.nav-btn{
+		display: block;
+	}
+	.hero{
+		width: 80%;
+		height: 70vh;
+		margin: 0 auto;
+		display: flex;
+		overflow: hidden;
+	}
+
+	.hamburger-menu{
+		display: none;
+	}
+
 	.hero-img{
+		display: none;
+	}
+
+	.hero-subtitle{
 		display: none;
 	}
 
 	.hero-img-desktop{
 		display: block;
-		width: 50%;
+		overflow: hidden;
+		position: absolute;
+		right: -150px;
+		bottom: 50px; 
+		height: 70%;
+	}
+
+	main{
+		width: 80%;
+		margin: 0 auto;
 	}
 }
 
+@media (min-width:1024px)  {
+	.hero-img-desktop{
+		right: 0px;
+		bottom: 25px; 
+		height: 80%;
+	}
+
+	.hero-text{
+		font-size: 4.5rem;
+		z-index: 10;
+	}
+}
+
+@media (min-width:1280px)  {
+
+}
 
 /* @media (min-width:1000px)  {
 
