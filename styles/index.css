@@ -12,6 +12,7 @@
 
 /* Import all css classes: */
 @import url("classes/input.css");
+@import url("classes/slideshow.css");
 
 
 /*Normalize CSS properties applies to all viewports*/
@@ -35,10 +36,11 @@ header{
 	color: white;
 	overflow: hidden;
 	position: relative;
+	margin-bottom: 2rem;
 }
 	
 .nav{
-	height: 10vh;	
+	height: 100px;	
 	color: white;
 	padding: 1.25rem;
 	display: flex;
@@ -61,10 +63,15 @@ header{
 
 .hamburger-menu{
 	display: block;
+	transition: all 200ms ease-in-out;
+	transform: rotate(0deg);
+
 }
 
 .hamburger-menu:hover{
 	cursor: pointer;
+	opacity: .5;
+	transform: rotate(180deg);
 }
 
 .big{
@@ -73,7 +80,7 @@ header{
 
 .hero{
 	position: relative;
-	height: 55vh;
+	height: 550px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -92,9 +99,9 @@ header{
 
 .hero-img{
 	position: absolute;
-	right: -100px;
+	right: -170px;
+	height: 100%;
 	bottom: 0;
-	height: 90%;
 	z-index: 0;
 }
 
@@ -138,25 +145,25 @@ main {
 }
 .icon-title{
 	text-align: center;
-	margin-bottom: 10px;
+	margin-bottom: 2rem;
 }
 .under-title{
 	margin-top: 5px;
 	margin-bottom: 1rem;
 }
 .slideshow{
-	background-color: #8d8d8d;
-	height: 200px;
+	height: 100%;
 	/* cargar her er height til den box */
 	margin-bottom: 2rem;
 
 }
 .news{
 	background-color: #d6d6d6;
+	border-radius: .3em;
 
 }
 .container-news{
-	padding: 3px 16px;
+	padding: .75rem 1rem;
 }
 .title-second-section{
 	font-size: x-large;
@@ -171,6 +178,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	margin-bottom: 2rem;
 }
 .news-first{
 	width: 100%;
@@ -194,6 +202,7 @@ main {
 	text-align: center;
 	margin-top: 0.5rem;
 }
+
 .map-responsive{
     overflow:hidden;
 	padding-bottom: 80%;
@@ -218,11 +227,10 @@ main {
 	background-color: white;
 }
 .container-news p{
-	padding:1rem;
+	padding: 0.75rem 0;
+
 }
-.map-text p{
-	padding: 1rem;
-}
+
 .btn-maps{
 	width: 50%; 
 	margin: 0 auto;
@@ -233,9 +241,7 @@ footer{
 	color: white;
 	height: 250px;
 }
-footer h2{
-	padding: 2rem;
-}
+
 .copyright{
 	background-color: #252525;
 	text-align: center;
@@ -244,6 +250,40 @@ footer h2{
 .copyright p{
 	color: #6d6d6d;
 	font-size: .75rem;
+}
+
+.map-text{
+	margin-bottom: 2rem;
+}
+
+footer{
+	height: 100%;
+	padding: 2.5rem 1.5rem 4rem 1.5rem;
+}
+
+footer a{
+	text-decoration: none;
+	color: white;
+	opacity: .8;
+
+}
+
+.footer-container h2 {
+	margin-bottom: .75rem;
+}
+
+.footer-container{
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+	height: 100%;
+}
+
+.content-container{
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
 }
 
 @media (min-width:420px)  {
@@ -306,7 +346,7 @@ footer h2{
 	}
 	.hero{
 		width: 80%;
-		height: 70vh;
+		height: 650px;
 		margin: 0 auto;
 		display: flex;
 		overflow: hidden;
@@ -329,8 +369,8 @@ footer h2{
 		overflow: hidden;
 		position: absolute;
 		right: -150px;
-		bottom: 50px; 
-		height: 70%;
+		bottom: 100px; 
+		height: 60%;
 	}
 
 	main{
@@ -343,6 +383,11 @@ footer h2{
 		justify-content: center;
 		margin-left: 2rem;
 	}
+
+	.mb-2{
+		margin-bottom: 2rem;
+	}
+
 	.icon-title{
 		font-size: xx-large;
 		margin-bottom: 20px;
@@ -388,6 +433,10 @@ footer h2{
 		color: #6d6d6d;
 		font-size: 14px;
 	}
+
+	.footer-container{
+		grid-template-columns: 1fr 1fr;
+	}
 }
 
 @media (min-width:1024px)  {
@@ -413,9 +462,8 @@ footer h2{
 		height: auto;
 	}
 	.slideshow{
-		background-color: #8d8d8d;
 		width: 100%;
-		height: 300px;
+		height: 100%;
 		/* cargar her er height til den box */
 	}
 	.news{
@@ -423,7 +471,6 @@ footer h2{
 		background-color: #d6d6d6;
 	}
 	.container-news{
-		padding: 3px 1rem;
 	}
 	.title-second-section{
 		font-size: xx-large;
@@ -454,6 +501,15 @@ footer h2{
 		width: 20%; 
 		margin: 0 auto;
 		margin-top: .5rem;
+	}
+
+	footer{
+		padding-left: 2rem;  
+		padding-right: 2rem;
+	}
+
+	.footer-container{
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
@@ -491,19 +547,15 @@ footer h2{
 		font-size: 20px;
 	}
 	.container-news p{
-		padding:1rem;
 		font-size: 20px;
 	}
 	.container-news h4{
-		padding:.5rem;
 		font-size: 24px;
 	}
 	.map-text p{
-		padding: 1rem;
 		font-size: 20px;
 	}
 	footer h2{
-		padding: 2rem;
 		font-size: 1.75rem;
 	}
 }
@@ -535,7 +587,7 @@ footer h2{
 @media (min-width:1650px){
 	
 	footer h2{
-		font-size: 2rem;
+		font-size: 1.5rem;
 	}
 
 }
